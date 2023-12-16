@@ -5,10 +5,10 @@ import doctest
 
 class TestTempita(unittest.TestCase):
     def test_docs(self):
-        doctest.testfile('../docs/index.rst')
+        doctest.testfile("../docs/index.rst")
 
     def test_readme(self):
-        doctest.testfile('../README.rst')
+        doctest.testfile("../README.rst")
 
     def test_templating(self):
-        doctest.testfile('test_template.txt')
+        doctest.testfile("test_template.txt")
