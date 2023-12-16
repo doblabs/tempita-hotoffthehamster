@@ -1,9 +1,9 @@
-__all__ = ['b', 'basestring_', 'bytes', 'next', 'is_unicode']
+__all__ = ["b", "basestring_", "bytes", "next", "is_unicode"]
 
 
 def b(s):
     if isinstance(s, str):
-        return s.encode('latin1')
+        return s.encode("latin1")
     return bytes(s)
 
 
@@ -17,7 +17,7 @@ def is_unicode(obj):
 
 def coerce_text(v):
     if not isinstance(v, basestring_):
-        attr = '__str__'
+        attr = "__str__"
         if hasattr(v, attr):
             return str(v)
         else:
