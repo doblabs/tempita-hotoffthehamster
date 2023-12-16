@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-import sys, os
+import os
+import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 import doctest

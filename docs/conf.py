@@ -23,7 +23,6 @@
 import os
 import sys
 from collections.abc import MutableMapping
-
 from importlib.metadata import version as importlib_metadata_version
 
 # import sphinx_rtd_theme
