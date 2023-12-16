@@ -1,6 +1,47 @@
 Tempita
 +++++++
 
+.. CXREF:
+   https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge
+
+.. image:: https://github.com/doblabs/tempita-hotoffthehamster/actions/workflows/checks-unspecial.yml/badge.svg?branch=release
+  :target: https://github.com/doblabs/tempita-hotoffthehamster/actions/workflows/checks-unspecial.yml/badge.svg?branch=release
+  :alt: Build Status
+
+.. CXREF: https://app.codecov.io/gh/doblabs/tempita-hotoffthehamster/settings/badge
+
+.. image:: https://codecov.io/gh/doblabs/tempita-hotoffthehamster/graph/badge.svg?token=E0cpXPQExg
+  :target: https://app.codecov.io/gh/doblabs/tempita-hotoffthehamster
+  :alt: Coverage Status
+
+.. image:: https://readthedocs.org/projects/tempita-hotoffthehamster/badge/?version=latest
+  :target: https://tempita-hotoffthehamster.readthedocs.io/en/latest/
+  :alt: Documentation Status
+
+.. image:: https://img.shields.io/github/v/release/doblabs/tempita-hotoffthehamster.svg?style=flat
+  :target: https://github.com/doblabs/tempita-hotoffthehamster/releases
+  :alt: GitHub Release Status
+
+.. image:: https://img.shields.io/pypi/v/tempita-hotoffthehamster.svg
+  :target: https://pypi.org/project/tempita-hotoffthehamster/
+  :alt: PyPI Release Status
+
+.. image:: https://img.shields.io/pypi/pyversions/tempita-hotoffthehamster.svg
+  :target: https://pypi.org/project/tempita-hotoffthehamster/
+  :alt: PyPI Supported Python Versions
+
+.. image:: https://img.shields.io/github/license/doblabs/tempita-hotoffthehamster.svg?style=flat
+  :target: https://github.com/doblabs/tempita-hotoffthehamster/blob/release/LICENSE
+  :alt: License Status
+
+.. |tempita-hotoffthehamster| replace:: ``tempita-hotoffthehamster``
+.. _tempita-hotoffthehamster: https://github.com/doblabs/tempita-hotoffthehamster
+
+.. |pipx| replace:: ``pipx``
+.. _pipx: https://pypa.github.io/pipx/
+
+|
+
 .. toctree::
    :maxdepth: 1
 
