@@ -1173,9 +1173,9 @@ strings.
 
 
 def fill_command(args=None):
-    import sys
     import optparse
     import os
+    import sys
 
     if args is None:
         args = sys.argv[1:]

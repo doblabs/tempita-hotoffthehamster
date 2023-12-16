@@ -1,6 +1,6 @@
+import doctest
 import os
 import unittest
-import doctest
 
 
 class TestTempita(unittest.TestCase):
