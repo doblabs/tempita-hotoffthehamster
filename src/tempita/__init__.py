@@ -194,7 +194,9 @@ class Template:
                 raise TypeError("You can only give one positional argument")
             if not hasattr(args[0], "items"):
                 raise TypeError(
-                    "If you pass in a single argument, you must pass in a dictionary-like object (with a .items() method); you gave %r"
+                    "If you pass in a single argument,"
+                    " you must pass in a dictionary-like object"
+                    " (with a .items() method); you gave %r"
                     % (args[0],)
                 )
             kw = args[0]
@@ -210,7 +212,7 @@ class Template:
         return result
 
     def _interpret(self, ns):
-        __traceback_hide__ = True
+        __traceback_hide__ = True  # noqa: F841
         parts = []
         defs = {}
         self._interpret_codes(self._parsed, ns, out=parts, defs=defs)
@@ -221,7 +223,7 @@ class Template:
         return "".join(parts), defs, inherit
 
     def _interpret_inherit(self, body, defs, inherit_template, ns):
-        __traceback_hide__ = True
+        __traceback_hide__ = True  # noqa: F841
         if not self.get_template:
             raise TemplateError(
                 "You cannot use inheritance without passing in get_template",
@@ -238,7 +240,7 @@ class Template:
         return templ.substitute(ns)
 
     def _interpret_codes(self, codes, ns, out, defs):
-        __traceback_hide__ = True
+        __traceback_hide__ = True  # noqa: F841
         for item in codes:
             if isinstance(item, basestring_):
                 out.append(item)
@@ -246,7 +248,7 @@ class Template:
                 self._interpret_code(item, ns, out, defs)
 
     def _interpret_code(self, code, ns, out, defs):
-        __traceback_hide__ = True
+        __traceback_hide__ = True  # noqa: F841
         name, pos = code[0], code[1]
         if name == "py":
             self._exec(code[2], ns, pos)
@@ -290,7 +292,7 @@ class Template:
             assert 0, "Unknown code: %r" % name
 
     def _interpret_for(self, vars, expr, content, ns, out, defs):
-        __traceback_hide__ = True
+        __traceback_hide__ = True  # noqa: F841
         for item in expr:
             if len(vars) == 1:
                 ns[vars[0]] = item
@@ -310,7 +312,7 @@ class Template:
                 break
 
     def _interpret_if(self, parts, ns, out, defs):
-        __traceback_hide__ = True
+        __traceback_hide__ = True  # noqa: F841
         # @@: if/else/else gets through
         for part in parts:
             assert not isinstance(part, basestring_)
@@ -324,14 +326,14 @@ class Template:
                 break
 
     def _eval(self, code, ns, pos):
-        __traceback_hide__ = True
+        __traceback_hide__ = True  # noqa: F841
         try:
             try:
                 value = eval(code, self.default_namespace, ns)
-            except SyntaxError as e:
+            except SyntaxError:
                 raise SyntaxError("invalid syntax in expression: %s" % code)
             return value
-        except:
+        except Exception:
             exc_info = sys.exc_info()
             e = exc_info[1]
             if getattr(e, "args", None):
@@ -342,10 +344,10 @@ class Template:
             raise exc_info[0](e).with_traceback(exc_info[2])
 
     def _exec(self, code, ns, pos):
-        __traceback_hide__ = True
+        __traceback_hide__ = True  # noqa: F841
         try:
             exec(code, self.default_namespace, ns)
-        except:
+        except Exception:
             exc_info = sys.exc_info()
             e = exc_info[1]
             if e.args:
@@ -355,7 +357,7 @@ class Template:
             raise exc_info[0](e).with_traceback(exc_info[2])
 
     def _repr(self, value, pos):
-        __traceback_hide__ = True
+        __traceback_hide__ = True  # noqa: F841
         try:
             if value is None:
                 return ""
@@ -369,7 +371,7 @@ class Template:
                     value = coerce_text(value)
                 if is_unicode(value) and self.default_encoding:
                     value = value.encode(self.default_encoding)
-        except:
+        except Exception:
             exc_info = sys.exc_info()
             e = exc_info[1]
             e.args = (self._add_line_info(e.args[0], pos),)
@@ -450,7 +452,7 @@ class bunch(dict):
 
 
 ############################################################
-## HTML Templating
+# HTML Templating
 ############################################################
 
 
@@ -664,7 +666,7 @@ Empty = _Empty()
 del _Empty
 
 ############################################################
-## Lexing and Parsing
+# Lexing and Parsing
 ############################################################
 
 
@@ -863,7 +865,7 @@ def parse(s, name=None, line_offset=0, delimiters=None):
         Traceback (most recent call last):
             ...
         TemplateError: Multi-line py blocks must start with a newline at line 1 column 3
-    """
+    """  # noqa: E501
     if delimiters is None:
         delimiters = (
             Template.default_namespace["start_braces"],
