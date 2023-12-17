@@ -1,5 +1,4 @@
 import doctest
-import os
 import unittest
 
 
