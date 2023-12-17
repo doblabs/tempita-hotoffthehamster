@@ -196,8 +196,7 @@ class Template:
                 raise TypeError(
                     "If you pass in a single argument,"
                     " you must pass in a dictionary-like object"
-                    " (with a .items() method); you gave %r"
-                    % (args[0],)
+                    " (with a .items() method); you gave %r" % (args[0],)
                 )
             kw = args[0]
         ns = kw
