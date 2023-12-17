@@ -197,9 +197,13 @@ the built-in variables like ``{{start_braces}}`` and
 ``{{end_braces}}``.  There's no escape character.
 
 You may also specify the delimiters as an argument to the Template
-__init__ method:
+``__init__`` method::
 
-    >>> tempita.Template(content='Hello ${name}', delimiters=('${', '}')).substitute(name='world')
+    >>> tempita.Template(
+      content='Hello ${name}',
+      delimiters=('${', '}')
+    ).substitute(name='world')
+
     'Hello world'
 
 The delimiters argument must be of length two and both items must be strings.
