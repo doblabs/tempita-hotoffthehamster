@@ -52,6 +52,10 @@ __all__ = [
     "bunch",
 ]
 
+# This version is substituted on poetry-build by poetry-dynamic-versioning.
+# - Consequently, __version__ remains empty when installed in 'editable' mode.
+__version__ = ""
+
 in_re = re.compile(r"\s+in\s+")
 var_re = re.compile(r"^[a-z_][a-z0-9_]*$", re.I)
 
