@@ -40,6 +40,14 @@ Tempita
 .. |pipx| replace:: ``pipx``
 .. _pipx: https://pypa.github.io/pipx/
 
+.. |ss| raw:: html
+
+   <strike>
+
+.. |se| raw:: html
+
+   </strike>
+
 |
 
 .. .. toctree::
@@ -57,7 +65,7 @@ Status & License
 
 Tempita is available under an `MIT-style license <license.html>`_.
 
-It is actively developed, but not an ambitious project.  It does not
+It is |ss| actively\ |se| developed, but not an ambitious project.  It does not
 seek to take over the templating world, or adopt many new features.
 I just wanted a small templating language for cases when ``%`` and
 ``string.Template`` weren't enough.
