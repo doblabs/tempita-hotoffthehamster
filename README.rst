@@ -42,13 +42,13 @@ Tempita
 
 |
 
-.. toctree::
-   :maxdepth: 1
+.. .. toctree::
+..    :maxdepth: 1
+..
+..    license
+..    modules/tempita
 
-   license
-   modules/tempita
-
-.. contents::
+.. .. contents::
 
 :author: Ian Bicking <ianb@colorstudy.com>
 
